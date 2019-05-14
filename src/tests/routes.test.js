@@ -13,8 +13,3 @@ test('Home route returns an html file', (t) => {
         t.end();
     })
 })
-
-test('test to test travis', t => {
-  t.equals(2, 3, 'should fail')
-  t.end()
-})
