@@ -6,11 +6,12 @@
   "scripts": {
     "test": "NODE_ENV=test tape src/tests/*.test.js | tap-spec",
     "test:live": "NODE_ENV=test nodemon src/tests/*.test.js | tap-bunny",
+    "test:coverage": "nyc npm test",
     "start": "node src/index.js",
     "start:live": "nodemon src/index.js",
     "db:build": "node src/model/database/db_build.js",
-    "lint": "./node_modules/.bin/eslint src/**/*.js",
-    "lint:fix": "./node_modules/.bin/eslint src/* --fix && ./node_modules/.bin/eslint public/* --fix"
+    "lint": "./node_modules/.bin/eslint src/*.* src/**/*.js public/*.js public/css/*.*",
+    "lint:fix": "./node_modules/.bin/eslint src/*.* src/**/*.js public/*.js public/css/*.* --fix"
   },
   "repository": {
     "type": "git",
