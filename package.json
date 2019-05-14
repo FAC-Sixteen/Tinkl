@@ -1,0 +1,40 @@
+{
+  "name": "Tinkl",
+  "version": "1.0.0",
+  "description": "Tinkl Tinkl little Tsar",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test tape src/tests/*.test.js | tap-bunny",
+    "test:live": "NODE_ENV=test nodemon src/tests/*.test.js | tap-bunny",
+    "start": "node src/index.js",
+    "start:live": "nodemon src/index.js",
+    "db:build": "node src/model/database/db_build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FAC-Sixteen/Tinkl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FAC-Sixteen/Tinkl/issues"
+  },
+  "homepage": "https://github.com/FAC-Sixteen/Tinkl#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.0",
+    "nyc": "^14.1.1",
+    "supertest": "^4.0.2",
+    "tap-bunny": "^1.0.9",
+    "tape": "^4.10.1"
+  },
+  "dependencies": {
+    "env2": "^2.2.2",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "handlebars-helpers": "^0.10.0",
+    "pg": "^7.11.0",
+    "query-string": "^6.5.0",
+    "serve-favicon": "^2.5.0"
+  }
+}
