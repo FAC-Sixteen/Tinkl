@@ -4,7 +4,7 @@
   "description": "Tinkl Tinkl little Tsar",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test tape src/tests/*.test.js | tap-bunny",
+    "test": "NODE_ENV=test tape src/tests/*.test.js | tap-spec",
     "test:live": "NODE_ENV=test nodemon src/tests/*.test.js | tap-bunny",
     "start": "node src/index.js",
     "start:live": "nodemon src/index.js",
@@ -26,6 +26,7 @@
     "nyc": "^14.1.1",
     "supertest": "^4.0.2",
     "tap-bunny": "^1.0.9",
+    "tap-spec": "^5.0.0",
     "tape": "^4.10.1"
   },
   "dependencies": {
