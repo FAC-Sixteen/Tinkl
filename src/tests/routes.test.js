@@ -3,13 +3,13 @@ const supertest = require('supertest');
 const router = require('../app');
 
 test('Home route returns an html file', (t) => {
-    supertest(router)
+  supertest(router)
     .get('/')
     .expect(200)
     .expect('Content-Type', /html/)
     .end((err, res) => {
-        t.error(err, 'Error should be null');
-        t.pass('Home route is a success yes?');
-        t.end();
-    })
-})
+      t.error(err, 'Error should be null');
+      t.pass('Home route is a success yes?');
+      t.end();
+    });
+});

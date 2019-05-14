@@ -8,7 +8,9 @@
     "test:live": "NODE_ENV=test nodemon src/tests/*.test.js | tap-bunny",
     "start": "node src/index.js",
     "start:live": "nodemon src/index.js",
-    "db:build": "node src/model/database/db_build.js"
+    "db:build": "node src/model/database/db_build.js",
+    "lint": "./node_modules/.bin/eslint src/**/*.js",
+    "lint:fix": "./node_modules/.bin/eslint src/* --fix && ./node_modules/.bin/eslint public/* --fix"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,9 @@
   },
   "homepage": "https://github.com/FAC-Sixteen/Tinkl#readme",
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
     "nodemon": "^1.19.0",
     "nyc": "^14.1.1",
     "supertest": "^4.0.2",
