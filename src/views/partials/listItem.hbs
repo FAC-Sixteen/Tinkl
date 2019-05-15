@@ -1,0 +1,31 @@
+{{#each listItemArray}}
+    <section class="list__listItem">
+        {{name}}
+        {{distance}}
+        {{customerOnly}}
+        {{address}}
+        <section class="list__listItem__icons">
+            {{#if accessible}}
+                {{accessible}}
+            {{/if}}
+
+            {{#if baby_changing}}
+                {{baby_changing}}
+            {{/if}}
+
+            {{#unless price}}
+                FREE
+            {{/unless}}
+
+            {{#if gender_neutral}}
+                {{gender_neutral}}
+            {{/if}}
+        </section>
+    </section>
+{{/each}}
+
+
+
+
+
+
