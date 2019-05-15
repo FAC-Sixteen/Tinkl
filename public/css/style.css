@@ -34,7 +34,6 @@ a:link {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
-    font-size: 1em;
   }
 
   .button__forward {
@@ -47,7 +46,6 @@ a:link {
 
   .button__baby {
     background-image:url('../assets/baby.svg');
-    background-size: 80%;
   }
 
   .button__customerOnly {
@@ -56,7 +54,6 @@ a:link {
 
   .button__accessible {
     background-image:url('../assets/accessible.svg');
-    background-size: 80%;
   }
 
   .button__genderNeutral {
@@ -65,5 +62,9 @@ a:link {
 
   .button__free {
     background-image:url('../assets/free.svg');
-    background-size: 80%;
+  }
+
+  .listItem__icon {
+    height: 2rem;
+    width: 2rem;
   }
