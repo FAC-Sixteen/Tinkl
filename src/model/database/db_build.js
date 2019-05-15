@@ -9,7 +9,7 @@ const dbBuild = new Promise((resolve, reject) => {
 })
 
 dbBuild
-.then(res => console.log('Built toilet database: ', res))
+.then(res => console.log('Built toilet database'))
 .catch(err => console.log('Database failed to build', err));
 
 module.exports = dbBuild;
