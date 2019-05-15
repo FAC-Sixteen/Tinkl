@@ -12,20 +12,7 @@ https.get('https://gbptm-stage.herokuapp.com/api/loos', (res) => {
 
   res.on('end', () => {
     const parsedData = JSON.parse(loosData);
-    // let looArray = [];
-    // let looArray = parsedData.map(looid => {
     getLooArray(parsedData);
-    // await Promise.all(parsedData.map(looid => getLooObject(looid._id)))
-    //   .then(res => console.log(res))
-      // getLooArray(parsedData)
-      //   .then(result => {
-      //     // console.log('this is the result', result);
-      //     console.log(result);
-      //   })
-      // .catch(err => 1+1);
-    // })
-    //stringify array and write to file
-    // console.log('This is the looArray: ', looArray)
   })
 })
 
