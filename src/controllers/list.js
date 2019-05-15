@@ -2,6 +2,7 @@ exports.get = (req, res) => {
     res.render('list', {pageTitle: 'Near You', navBack: '/filter', navForward: '/', listItemArray});
   }
   
+  //array will come from database query given the filters selected
   const listItemArray = [
       {
           name: 'Waterstones',

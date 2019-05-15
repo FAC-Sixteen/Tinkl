@@ -23,22 +23,12 @@ a:link {
     text-decoration: underline;
   } */
 
-  /* --------------Blocks----------------*/
 
 
-
-
-
-
-
-  /*------------------Elements------------------*/
-
-
-
-
-
-
-
-
-
-  /*---------------------Modifiers--------------------*/
+  .button__forward {
+    height: 2rem;
+    width: 2rem;
+    background-image:url('../assets/tick.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
