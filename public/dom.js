@@ -6,7 +6,7 @@ const geolocate = () => {
       const url = `/geolocation?long=${pos.coords.longitude}&lat=${pos.coords.latitude}`
       fetch(url)
         .then(res => {
-          console.log(res);
+          window.location.href = '/filter';
         })
         .catch(err => {
           console.log('error', err);
@@ -17,7 +17,7 @@ const geolocate = () => {
   }
 };
 
-const geoError= error => {
+const geoError = error => {
   switch (error.code) {
     case 3:
       //request timeout
