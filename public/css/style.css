@@ -24,9 +24,60 @@ a:link {
   } */
 
 
+/* FULL APP STYLING */
+
+
   body {
-    padding: 1rem;
+    /* padding: 1rem; */
+    font-family: 'Signika Negative', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
+
+  .header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100vw;
+    height: 75px;
+    background-color: #A3DAD1;
+  }
+  
+  .header__text {
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 0%;
+  }
+
+
+
+/* LANDING PAGE */
+  .home--background {
+    background-color: #A3DAD1;
+    position: fixed;
+    top:0;
+    z-index: -100;
+    height: 100%;
+    width: 100vw; 
+  }  
+
+  .title {
+    font-size: 6em;
+    font-weight: 600;
+    line-height: 0;
+  }
+
+  .logo--background {
+    z-index: -15;
+    position: absolute;
+   bottom: 0;
+   right: 0;
+    filter: blur(10px);
+  }
+
+/* FILTER PAGE */
 
   .button__filter {
     height: 5rem;
