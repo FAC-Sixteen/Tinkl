@@ -37,11 +37,14 @@ a:link {
   }
 
   .button__forward {
-    height: 2rem;
-    width: 2rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image:url('../assets/tick.svg');
+    height: 4rem;
+    width: 4rem;
+    position: relative;
+  }
+
+  .button__forward--tick {
+    position: absolute;
+    bottom: 0;
   }
 
   .button__baby {
