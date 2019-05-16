@@ -49,3 +49,14 @@ test('List page returns an html file', t => {
       t.end();
     });
 });
+
+test('/geolocation gives cookie', t => {
+  supertest(router)
+    .get('/geolocation?long=50&lat=1')
+    .expect(200)
+    .end((err, res) => {
+      t.error(err, 'Error should be null');
+      t.equals(res.header['set-cookie'][0].split('=')[0], 'userlocation', 'should have cookie called userlocation')
+      t.end();
+    })
+})

@@ -2,8 +2,8 @@ const locateMe = document.querySelector('.button__location');
 const alert = document.querySelector('.location__alert');
 
 const geolocate = () => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(pos => {
+  useLocation()
+    .then(pos => {
       const url = `/geolocation?long=${pos.coords.longitude}&lat=${pos.coords.latitude}`;
       fetch(url)
         .then(res => {
@@ -12,12 +12,24 @@ const geolocate = () => {
         .catch(err => {
           console.log('error', err);
         })
-    }, geoError, {timeout: 5000})
-  } else {
-    alert.textContent = 'Sorry, your browser is not compatible with Use My Location.'
-    locateMe.disabled = true; 
-  }
+    })
+    .catch(err => {
+      alert.textContent = 'Sorry, your browser is not compatible with Use My Location.';
+      locateMe.disabled = true;
+    })
 };
+
+const useLocation = () => {
+  return new Promise((resolve, reject) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(pos => {
+        resolve(pos);
+      }, geoError, {timeout: 5000});
+    } else {
+      reject('no');
+    }
+  })
+}
 
 const geoError = error => {
   switch (error.code) {
