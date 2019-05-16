@@ -1,7 +1,7 @@
 const locateMe = document.querySelector('.button__location');
 const alert = document.querySelector('.location__alert');
 const postcodeMe = document.querySelector('.button__postcode');
-const postcodeText = document.getElementsByClassName('text__location')[0];
+const postcodeText = document.querySelector('.text__location');
 
 const geolocate = (promise) => {
   promise()
@@ -17,7 +17,7 @@ const geolocate = (promise) => {
     })
     .catch((err) => {
       if (err === 'geolocation') {
-        alert.textContent = 'Sorry, your browser is not compatible with Use My Location.';
+        alert.textContent = 'Sorry, your browser is not compatible with the Use My Location feature.';
         locateMe.disabled = true;
       } else {
         // customer facing validation for bad postcode needed
