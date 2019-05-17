@@ -13,7 +13,7 @@ const filterConfirm = () => {
       window.location.href = '/list';
     })
     .catch((err) => {
-      error.textContent = 'Oh No. Something went wrong.'
+      error.textContent = 'Oh No. Something went wrong.';
     });
 };
 

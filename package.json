@@ -11,7 +11,7 @@
     "start:live": "nodemon src/index.js",
     "db:build": "node src/model/database/db_build.js",
     "lint": "./node_modules/.bin/eslint src/*.* src/**/*.js public/js/*.js",
-    "lint:fix": "./node_modules/.bin/eslint src/*.* src/**/*.js public/js/*.js --fix"
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
