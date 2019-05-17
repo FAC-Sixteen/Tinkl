@@ -22,18 +22,14 @@ const getLooArray = async (json) => {
   console.log('in getLooArray');
   return await Promise.all(json.map((looid, index) => getLooObject(looid._id, index)))
     .then(res => res.filter(x => x !== undefined))
-    .then(res => {
-      looArray = looArray.concat(res);
-      console.log('looArray: ', looArray)
-      })
+    .then(res => looArray = looArray.concat(res))
+    .then(newToiletData => appendJSON(newToiletData))
     .catch(err => console.log('Caught error: ', err));
 }
 
 const getLooObject = (id, index) => {
   return new Promise((resolve, reject) => {
-    console.log(index);
     if (index > 0 && index < 100) {
-      console.log(index);
       let url = `https://gbptm-stage.herokuapp.com/api/loos/${id}`;
       https.get(url, (res) => {
         let looData = '';
@@ -44,8 +40,6 @@ const getLooObject = (id, index) => {
 
         res.on('end', () => {
           const parsedLooData = JSON.parse(looData);
-          // if (parsedLooData.geometry.coordinates[0] > -0.602366 && parsedLooData.geometry.coordinates[0] < 0.314867) {
-          //   if (parsedLooData.geometry.coordinates[1] > 51.246572 && parsedLooData.geometry.coordinates[1] < 51.711196) {
           if (parsedLooData.geometry.coordinates[0] > -0.602366
             && parsedLooData.geometry.coordinates[0] < 0.314867 
             && parsedLooData.geometry.coordinates[1] > 51.246572
@@ -98,9 +92,6 @@ const getLooObject = (id, index) => {
                   radar: parsedLooData.properties._doc.radar,
                   removal_reason: null
                 }
-
-                console.log('object is ', object);
-                console.log('index', index);
                 resolve(object);
               } else {
                 resolve();
@@ -115,3 +106,27 @@ const getLooObject = (id, index) => {
   }
   });
 };
+
+const appendJSON = newToiletData => {
+  let toiletJSON;
+  let newJSON;
+
+  fs.readFile(path.join(__dirname, '..', 'database', 'toilets.json'), 'utf8', (err, file) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    toiletJSON = JSON.parse(file);
+    console.log(toiletJSON);
+    toiletJSON += newToiletData;
+    newJSON = JSON.stringify(toiletJSON);
+    console.log(newJSON);
+
+    fs.writeFile(path.join(__dirname, '..', 'database', 'toilets.json'), newJSON, err => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+    });
+  });
+}
