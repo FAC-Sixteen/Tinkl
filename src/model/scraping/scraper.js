@@ -49,6 +49,9 @@ const getLooObject = (id, index) => {
                 // variables to create
                 let looAddress = '149 Fonthill Road';
 
+
+                
+
                 let looAccessible = null;
                   if (parsedLooData.properties._doc.accessibleType == 'none') {
                     looAccessible = false;
@@ -118,7 +121,8 @@ const appendJSON = newToiletData => {
     }
     toiletJSON = JSON.parse(file);
     console.log(toiletJSON);
-    toiletJSON += newToiletData;
+    newToiletData = newToiletData.concat(toiletJSON['data']);
+    toiletJSON['data'] = newToiletData;
     newJSON = JSON.stringify(toiletJSON);
     console.log(newJSON);
 
