@@ -1,27 +1,26 @@
+/* Media query for phones (keeps screen) */
+@media (max-width: 767px) {
+
 /* Style links */
-/* a:link {
+a:link {
     color: green;
-    background-color: transparent;
     text-decoration: none;
   }
 
   a:visited {
-    color: pink;
-    background-color: transparent;
+    color: green;
     text-decoration: none;
   }
 
   a:hover {
     color: red;
-    background-color: transparent;
     text-decoration: underline;
   }
 
   a:active {
     color: yellow;
-    background-color: transparent;
     text-decoration: underline;
-  } */
+  }
 
 
 /* FULL APP STYLING */
@@ -51,7 +50,37 @@
     letter-spacing: 0%;
   }
 
+/* TYPOGRAPHY */
 
+h1 {
+  font-size: 6em;
+  font-weight: 600;
+  line-height: 0;
+}
+
+h2 {
+  font-size: 2.25em;
+  font-weight: 600;
+  line-height: 0;
+}
+
+.p1 {
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 0;
+}
+
+.p2 {
+  font-size: 1.125em;
+  font-weight: 400;
+  line-height: 0;
+}
+
+.p3 {
+  font-size: 1.125em;
+  font-weight: 300;
+  line-height: 0;
+}
 
 /* LANDING PAGE */
   .home--background {
@@ -63,18 +92,19 @@
     width: 100vw; 
   }  
 
-  .title {
-    font-size: 6em;
-    font-weight: 600;
-    line-height: 0;
-  }
-
   .logo--background {
     z-index: -15;
     position: absolute;
    bottom: 0;
    right: 0;
     filter: blur(10px);
+  }
+
+  .button__find {
+    background-color: #F8FCFA;
+    padding: 0.3em 1em 0.3em 1em;
+    text-align: center;
+    border-radius: 50;
   }
 
 /* FILTER PAGE */
@@ -156,3 +186,5 @@
   .filter__container input:checked ~ .button__filter {
     background-color: #A3DAD1;
   }
+
+}
