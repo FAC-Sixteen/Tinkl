@@ -29,7 +29,7 @@ const getLooArray = async (json) => {
 
 const getLooObject = (id, index) => {
   return new Promise((resolve, reject) => {
-    if (index > 0 && index < 100) {
+    if (index >= 14700 && index < 14900) {
       let url = `https://gbptm-stage.herokuapp.com/api/loos/${id}`;
       https.get(url, (res) => {
         let looData = '';
@@ -46,12 +46,19 @@ const getLooObject = (id, index) => {
             && parsedLooData.geometry.coordinates[1] < 51.711196
             && parsedLooData.properties._doc.active) {
 
-                // variables to create
-                let looAddress = '149 Fonthill Road';
+                const opencagedataURL = `https://api.opencagedata.com/geocode/v1/json?q=${parsedLooData.geometry.coordinates[1]}+${parsedLooData.geometry.coordinates[0]}&key=${GEOTOKEN}`;
+                https.get(opencagedataURL, (res) => {
+                  let locationData = '';
 
-
-                
-
+                  res.on('data', chunk => {
+                    locationData += chunk;
+                  })
+          
+                  res.on('end', () => {
+                    const parsedLocationData = JSON.parse(locationData)
+                    let looAddress = parsedLocationData.results[0].formatted; 
+                    console.log(parsedLocationData.rate.remaining);
+                  
                 let looAccessible = null;
                   if (parsedLooData.properties._doc.accessibleType == 'none') {
                     looAccessible = false;
@@ -96,6 +103,8 @@ const getLooObject = (id, index) => {
                   removal_reason: null
                 }
                 resolve(object);
+              })
+            })
               } else {
                 resolve();
               }
@@ -120,11 +129,10 @@ const appendJSON = newToiletData => {
       return;
     }
     toiletJSON = JSON.parse(file);
-    console.log(toiletJSON);
     newToiletData = newToiletData.concat(toiletJSON['data']);
     toiletJSON['data'] = newToiletData;
     newJSON = JSON.stringify(toiletJSON);
-    console.log(newJSON);
+    
 
     fs.writeFile(path.join(__dirname, '..', 'database', 'toilets.json'), newJSON, err => {
       if (err) {
