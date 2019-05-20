@@ -72,3 +72,14 @@ test('/postcode gives long and lat', (t) => {
       t.end();
     });
 });
+
+test('/confirm gives cookie', (t) => {
+  supertest(router)
+    .get('/confirm?cus=true&bab=false&acc=true&fre=false&gen=true')
+    .expect(200)
+    .end((err, res) => {
+      t.error(err, 'Error should be null');
+      t.equals(res.header['set-cookie'][0].split('=')[0], 'userfilters', 'should have cookie called userfilters');
+      t.end();
+    });
+});

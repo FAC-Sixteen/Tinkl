@@ -1,6 +1,6 @@
 const qs = require('query-string');
-const { SECRET } = require('../config');
 const jwt = require('jsonwebtoken');
+const { SECRET } = require('../config');
 
 exports.get = (req, res) => {
   const coords = qs.parse(req.url.split('?')[1]);
