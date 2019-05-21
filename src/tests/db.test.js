@@ -3,7 +3,7 @@ const dbBuild = require('../model/database/db_build');
 
 test('test dbBuild is working', (t) => {
   dbBuild
-    .then(() => {
+    .then((res) => {
       t.pass('database built');
       t.end();
     })

@@ -10,8 +10,8 @@
     "start": "node src/index.js",
     "start:live": "nodemon src/index.js",
     "db:build": "node src/model/database/db_build.js",
-    "lint": "./node_modules/.bin/eslint src/*.* src/**/*.js public/*.js public/css/*.*",
-    "lint:fix": "./node_modules/.bin/eslint src/*.* src/**/*.js public/*.js public/css/*.* --fix"
+    "lint": "./node_modules/.bin/eslint src/*.* src/**/*.js public/js/*.js",
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
@@ -36,9 +36,11 @@
     "tape": "^4.10.1"
   },
   "dependencies": {
+    "cookie": "^0.4.0",
     "env2": "^2.2.2",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
+    "jsonwebtoken": "^8.5.1",
     "pg": "^7.11.0",
     "query-string": "^6.5.0",
     "serve-favicon": "^2.5.0"

@@ -1,0 +1,31 @@
+{{#each listItemArray}}
+    <section class="listItem">
+        {{name}}
+        {{distance}}
+        {{customerOnly}}
+        {{address}}
+        <section class="listItem__icon--container">
+            {{#if accessible}}
+                <img class="listItem__icon" src="/assets/accessible.svg" alt="Accessible Icon">
+            {{/if}}
+
+            {{#if baby_changing}}
+                <img class="listItem__icon" src="/assets/baby.svg" alt="Baby-changing Icon">
+            {{/if}}
+
+            {{#unless price}}
+                <img class="listItem__icon" src="/assets/free.svg" alt="Free Icon">
+            {{/unless}}
+
+            {{#if gender_neutral}}
+                <img class="listItem__icon" src="/assets/genderNeutral.svg" alt="Gender Neutral Icon">
+            {{/if}}
+        </section>
+    </section>
+{{/each}}
+
+
+
+
+
+

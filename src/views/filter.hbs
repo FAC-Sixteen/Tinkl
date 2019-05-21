@@ -1,0 +1,30 @@
+{{>header}}
+
+<section class="filter">
+    <label class="filter__container">
+        <input type="checkbox" id="checkbox__customerOnly">
+        <span class="button__filter button__customerOnly"></span>
+    </label>
+    <label class="filter__container">
+        <input type="checkbox" id="checkbox__baby">
+        <span class="button__filter button__baby"></span>
+    </label>
+    <label class="filter__container">
+        <input type="checkbox" id="checkbox__accessible">
+        <span class="button__filter button__accessible"></span>
+    </label>
+    <label class="filter__container">
+        <input type="checkbox" id="checkbox__free">
+        <span class="button__filter button__free"></span>
+    </label>
+    <label class="filter__container">
+        <input type="checkbox" id="checkbox__genderNeutral">
+        <span class="button__filter button__genderNeutral"></span>
+    </label>
+    <p>Select ALL that apply</p>
+    <p class="filter__error"></p>
+</section>
+
+{{>navigation}}
+
+<script src="../js/domFilter.js"></script>

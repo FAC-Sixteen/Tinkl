@@ -1,0 +1,107 @@
+/* Style links */
+/* a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  } */
+
+
+  body {
+    padding: 1rem;
+  }
+
+  /* .button__filter {
+    height: 5rem;
+    width: 5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+  } */
+
+  .button__forward {
+    height: 4rem;
+    width: 4rem;
+    position: relative;
+  }
+
+  .button__forward--tick {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .button__customerOnly {
+    background-image:url('../assets/customerOnly.svg');
+  }
+
+  .button__baby {
+    background-image:url('../assets/baby.svg');
+  }
+
+  .button__accessible {
+    background-image:url('../assets/accessible.svg');
+  }
+
+  .button__free {
+    background-image:url('../assets/free.svg');
+  }
+
+  .button__genderNeutral {
+    background-image:url('../assets/genderNeutral.svg');
+  }
+
+  .listItem__icon {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  /* ---- filter buttons checky checkboxes ---- */
+
+  .filter__container input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .filter__container {
+    display: block;
+    position: relative;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+  }
+
+  .button__filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color: #DBF0E4;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .filter__container input:checked ~ .button__filter {
+    background-color: #A3DAD1;
+  }
