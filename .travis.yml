@@ -1,4 +1,8 @@
 language: node_js
-node_js: 
+node_js:
  - 'node'
 cache: npm
+services:
+  - postgresql
+before-script:
+  - psql -c 'CREATE DATABASE travis-ci-test;' -U postgres
