@@ -1,9 +1,15 @@
 {{#each listItemArray}}
     <section class="listItem">
-        {{name}}
-        {{distance}}
-        {{customerOnly}}
-        {{address}}
+      <div class="listItem--onsameline">
+        <p class="p1">{{name}}</p>
+        <p>{{distance}}</p>
+      </div>
+        {{#if customer_toilet}}
+        <p class="listItem--grey">Customer toilet</p>
+        {{else}}
+        <p class="listItem--grey">Public toilet</p>
+        {{/if}}
+        <a href="{{map_link}}"><p>{{address}}</p></a>
         <section class="listItem__icon--container">
             {{#if accessible}}
                 <img class="listItem__icon" src="/assets/accessible.svg" alt="Accessible Icon">
@@ -23,9 +29,3 @@
         </section>
     </section>
 {{/each}}
-
-
-
-
-
-
