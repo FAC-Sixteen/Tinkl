@@ -47,8 +47,8 @@
     bottom: 0;
   }
 
-  .button__customerOnly {
-    background-image:url('../assets/customerOnly.svg');
+  .button__public {
+    background-image:url('../assets/public.svg');
   }
 
   .button__baby {
