@@ -5,5 +5,5 @@ cache: npm
 services:
   - postgresql
 before-script:
-  - psql -c 'CREATE DATABASE travis_ci_test;' -U postgres
+  - psql -c 'create database travis_ci_test;' -U postgres
   - npm run db:build:test
