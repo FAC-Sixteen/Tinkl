@@ -1,13 +1,16 @@
-{{>header}}
+<body class="location__body">
+  {{>header}}
 
 <section class="location">
-  <button class="button button__location" type="button">Use my location</button>
+  <button class="button button__location p1" type="button">Use my location</button>
   <p class="location__alert"></p>
   <p>OR</p>
-  <input class="text text__location" type="text" placeholder="Enter postcode">
-  <button class="button button__postcode" type="button">Use my postcode</button>
+  <input class="text text__location p2" type="text" placeholder="Enter postcode">
+  <button class="button button__location p1" type="button">Use my postcode</button>
 </section>
 
 <script src="../js/domLocation.js"></script>
 
-<input class="button button__back" type="button" value="Back" onclick="window.location.href='{{navBack}}'">
+{{>navigation}}
+
+</body>

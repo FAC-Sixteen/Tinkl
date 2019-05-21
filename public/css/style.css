@@ -4,51 +4,61 @@
 /* Style links */
 a:link {
     text-decoration: none;
-  }
+}
 
-  a:visited {
-    text-decoration: none;
-    color: black;
-  }
+a:visited {
+  text-decoration: none;
+  color: black;
+}
 
-  a:hover {
-    text-decoration: none;
-    color: black;
-  }
+a:hover {
+  text-decoration: none;
+  color: black;
+}
 
-  a:active {
-    text-decoration: none;
-    color: black;
-  }
+a:active {
+  text-decoration: none;
+  color: black;
+}
 
 
 /* FULL APP STYLING */
-
-
-  body {
-    /* padding: 1rem; */
+  * {
     font-family: 'Signika Negative', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
-  }
 
+  }
   .header {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: center;
     width: 100vw;
-    height: 75px;
+    height: 4.68em;
     background-color: #A3DAD1;
+    position: relative;
+  }
+
+  .header__logo {
+    position: absolute;
+    top: 0.2em;
+    left: 0.2em;
   }
   
-  .header__text {
+  /* .header__text {
     font-size: 2.25rem;
     font-weight: 600;
     letter-spacing: 0%;
+    text-align: center;
+  } */
+
+  .button__back {
+    padding: 0.4em 1.5em;
+    text-align: center;
+    border-radius: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    border: none;
+    background-color: #a3dad1;
   }
 
 /* TYPOGRAPHY */
@@ -56,25 +66,22 @@ a:link {
 h1 {
   font-size: 6em;
   font-weight: 600;
-  line-height: 0;
 }
 
 h2 {
   font-size: 2.25em;
   font-weight: 600;
-  line-height: 0;
+  text-align: center;
 }
 
 .p1 {
   font-size: 1.5em;
   font-weight: 400;
-  line-height: 0;
 }
 
 .p2 {
   font-size: 1.125em;
   font-weight: 400;
-  line-height: 0;
 }
 
 .p3 {
@@ -84,35 +91,65 @@ h2 {
 }
 
 /* LANDING PAGE */
-  .home--background {
-    background-color: #A3DAD1;
-    position: fixed;
-    top:0;
-    z-index: -100;
-    height: 100%;
-    width: 100vw; 
-  }  
 
-  .logo--background {
-    z-index: -15;
-    position: absolute;
-   bottom: 0;
-   right: 0;
-    filter: blur(10px);
-  }
+.home__body {
+  /* padding: 1rem; */
+  display: flex;
+  background-color: #A3DAD1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
 
-  .button__find {
-    background-color: #F8FCFA;
-    padding: 0.4em 1.5em;
-    text-align: center;
-    border-radius: 1em;
-    white-space: nowrap;
-    overflow: hidden;
-  }
+.logo--background {
+  z-index: -15;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  filter: blur(10px);
+}
 
-  .home__nav {
-    padding: 4rem;
-  }
+.button__find {
+  background-color: #F8FCFA;
+  padding: 0.4em 1.5em;
+  text-align: center;
+  border-radius: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.home__nav {
+  padding: 4rem;
+}
+
+/* LOCATION PAGE */
+.location {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50vh;
+}
+
+.button__location {
+  padding: 0.4em 1.5em;
+  text-align: center;
+  border-radius: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  border: none;
+  background-color: #DBF0E4;
+    
+}
+
+.text__location {
+  text-align: center;
+  padding: 0.5em 1em;
+  background-color: #f4f4f4;
+  border: 1px solid black;
+}
 
 /* FILTER PAGE */
 
