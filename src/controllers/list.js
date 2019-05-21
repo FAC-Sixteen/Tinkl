@@ -1,4 +1,18 @@
+const jwt = require('jsonwebtoken');
+const cookie = require('cookie');
+const { SECRET } = require('../config');
+const getData = require('../model/queries/getData');
+
 exports.get = (req, res) => {
+  const cookieLocation = cookie.parse(req.headers.cookie);
+  const locationJWT = cookieLocation.userlocation;
+  const locationCoordinates = jwt.verify(locationJWT, SECRET);
+
+  const lat = locationCoordinates.lat;
+  const long = locationCoordinates.long;
+
+  getData.getToilets(lat, long).then(res => console.log(res)).catch(error => console.error(error));
+
   res.render('list', {
     pageTitle: 'Near You', navBack: '/filter', navForward: '/', listItemArray,
   });
