@@ -1,6 +1,6 @@
-const locateMe = document.querySelector('.button__location');
+const locateMe = document.querySelector('#location');
 const alert = document.querySelector('.location__alert');
-const postcodeMe = document.querySelector('.button__postcode');
+const postcodeMe = document.querySelector('#postcode');
 const postcodeText = document.querySelector('.text__location');
 
 const geolocate = (promise) => {
