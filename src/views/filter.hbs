@@ -1,9 +1,10 @@
 {{>header}}
 <body class="filter__body">
 <section class="filter">
-    <label class="filter__container filter__public">
-        <input type="checkbox" id="checkbox__customerOnly">
-        <span class="button__filter button__customerOnly"></span>
+    <p class="filter__instructions">Select ALL that apply</p>
+    <label class="filter__container">
+        <input type="checkbox" id="checkbox__public">
+        <span class="button__filter button__public"></span>
     </label>
     <label class="filter__container filter__baby">
         <input type="checkbox" id="checkbox__baby">
@@ -21,9 +22,10 @@
         <input type="checkbox" id="checkbox__genderNeutral">
         <span class="button__filter button__genderNeutral"></span>
     </label>
+
     <div class="filter__info">
-    <p>Select ALL that apply</p>
-    <p class="filter__error"></p>
+      <p>Toilets intended for customers may require you to make a purchase</p>
+      <p class="filter__error"></p>
     </div>
 </section>
 

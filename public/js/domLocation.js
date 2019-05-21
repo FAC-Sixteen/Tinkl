@@ -2,6 +2,7 @@ const locateMe = document.querySelector('#location');
 const alert = document.querySelector('.location__alert');
 const postcodeMe = document.querySelector('#postcode');
 const postcodeText = document.querySelector('.text__location');
+const postcodeAlert = document.querySelector('.postcode__alert');
 
 const geolocate = (promise) => {
   promise()
@@ -17,7 +18,7 @@ const geolocate = (promise) => {
     })
     .catch((err) => {
       if (err === 'geolocation') {
-        alert.textContent = 'Sorry, your browser is not compatible with the Use My Location feature.';
+        locationAlert.textContent = 'Sorry, your browser is not compatible with the Use My Location feature.';
         locateMe.disabled = true;
       } else {
         // customer facing validation for bad postcode needed
@@ -38,13 +39,13 @@ const useLocation = () => new Promise((resolve, reject) => {
 const geoError = (error) => {
   switch (error.code) {
     case 3:
-      alert.textContent = 'Oops, the request timed out.';
+      locationAlert.textContent = 'Oops, the request timed out.';
       break;
     case 2:
-      alert.textContent = 'Oh dear, looks like your location is unavailable at the moment.';
+      locationAlert.textContent = 'Oh dear, looks like your location is unavailable at the moment.';
       break;
     case 1:
-      alert.textContent = 'Please allow location permissions to use this feature.';
+      locationAlert.textContent = 'Please allow location permissions to use this feature.';
       break;
   }
 };
@@ -56,7 +57,7 @@ locateMe.addEventListener('click', () => {
 
 const usePostcode = () => new Promise((resolve, reject) => {
   const regex = '^([A-PR-UWYZ0-9][A-HK-Y0-9][AEHMNPRTVXY0-9]?[ABEHMNPRVWXY0-9]? {0,2}[0-9][ABD-HJLN-UW-Z]{2}|GIR ?0AA)$';
-  if (postcodeText.value.match(regex)) {
+  if (postcodeText.value.toUpperCase().match(regex)) {
     const postcode = postcodeText.value.replace(' ', '%20');
     const url = `/postcode?postcode=${postcode}`;
     fetch(url)
@@ -67,7 +68,7 @@ const usePostcode = () => new Promise((resolve, reject) => {
         reject(err);
       });
   } else {
-    reject('postcode');
+    reject(postcodeAlert.textContent = 'Please enter a valid postcode.');
   }
 });
 

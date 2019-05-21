@@ -44,12 +44,9 @@ a:active {
     left: 0.2em;
   }
 
-  /* .header__text {
-    font-size: 2.25rem;
-    font-weight: 600;
-    letter-spacing: 0%;
-    text-align: center;
-  } */
+  .button__public {
+    background-image:url('../assets/public.svg');
+  }
 
   .button__back {
     padding: 0.4em 1.5em;
