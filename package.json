@@ -10,6 +10,7 @@
     "start": "node src/index.js",
     "start:live": "nodemon src/index.js",
     "db:build": "node src/model/database/db_build.js",
+    "db:build:test": "NODE_ENV=test node src/model/database/db_build.js",
     "lint": "./node_modules/.bin/eslint src/*.* src/**/*.js public/js/*.js",
     "lint:fix": "npm run lint -- --fix"
   },
