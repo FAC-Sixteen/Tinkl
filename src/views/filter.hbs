@@ -1,31 +1,38 @@
 {{>header}}
-
+<body class="filter__body">
 <section class="filter">
-    <p>Select ALL that apply</p>
-    <label class="filter__container">
+    <p class="filter__instructions">Select ALL that apply</p>
+    <label class="filter__container filter__public">
         <input type="checkbox" id="checkbox__public">
         <span class="button__filter button__public"></span>
     </label>
-    <label class="filter__container">
+    <label class="filter__container filter__baby">
         <input type="checkbox" id="checkbox__baby">
         <span class="button__filter button__baby"></span>
     </label>
-    <label class="filter__container">
+    <label class="filter__container filter__accessible">
         <input type="checkbox" id="checkbox__accessible">
         <span class="button__filter button__accessible"></span>
     </label>
-    <label class="filter__container">
+    <label class="filter__container filter__free">
         <input type="checkbox" id="checkbox__free">
         <span class="button__filter button__free"></span>
     </label>
-    <label class="filter__container">
+    <label class="filter__container filter__genderNeutral">
         <input type="checkbox" id="checkbox__genderNeutral">
         <span class="button__filter button__genderNeutral"></span>
     </label>
-    <p>Toilets intended for customers may require you to make a purchase</p>
-    <p class="filter__error"></p>
+
+    <div class="filter__info">
+      <p>Toilets intended for customers may require you to make a purchase</p>
+      <p class="filter__error"></p>
+    </div>
 </section>
 
+<footer class="filter__footer">
 {{>navigation}}
+<a class="button button__forward"><img class ="button__forward--tick" src="/assets/tick.svg"></a>
+</footer>
 
 <script src="../js/domFilter.js"></script>
+</body>
