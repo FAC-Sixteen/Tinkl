@@ -1,0 +1,15 @@
+{
+    "short_name": "Tinkl",
+    "name": "Tinkl - Find A Suitable Toilet FAST",
+    "icons": [
+    {
+    "src":"./assets/logo.svg",
+    "sizes": "192x192",
+    "type": "image/svg+xml"
+    }
+    ],
+    "start_url": "/",
+    "background_color": "#A3DAD1",
+    "theme_color": "#A3DAD1",
+    "display": "standalone"
+}
