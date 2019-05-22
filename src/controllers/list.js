@@ -4,30 +4,30 @@ const { SECRET } = require('../config');
 const getData = require('../model/queries/getData');
 
 exports.get = (req, res) => {
-  const cookieLocation = cookie.parse(req.headers.cookie);
-  const locationJWT = cookieLocation.userlocation;
-  const locationCoordinates = jwt.verify(locationJWT, SECRET);
+  const cookieData = cookie.parse(req.headers.cookie);
 
-  const lat = locationCoordinates.lat;
-  const long = locationCoordinates.long;
+  const locationJWT = cookieData.userlocation;
+  const coordinates = jwt.verify(locationJWT, SECRET);
 
-  getData.getToilets(lat, long).then(res => console.log(res)).catch(error => console.error(error));
+  const filterJWT = cookieData.userfilters;
+  const filters = jwt.verify(filterJWT, SECRET);
 
-  res.render('list', {
-    pageTitle: 'Near You', navBack: '/filter', navForward: '/', listItemArray,
-  });
+  const lat = coordinates.lat;
+  const long = coordinates.long;
+
+  getData.getToilets(lat, long, filters)
+  .then(getDataResult => {
+    const toiletsArray = generateMapLink(getDataResult);
+    res.render('list', {
+      pageTitle: 'Near You', navBack: '/filter', navForward: '/', toiletsArray,
+    });
+  })
+  .catch(error => console.error(error));
 };
 
-// array will come from database query given the filters selected
-const listItemArray = [
-  {
-    name: 'Waterstones',
-    distance: '10 metres away',
-    customer_toilet: true,
-    address: '2-4 The Broadway, Crouch End, London N8 9SN',
-    accessible: true,
-    baby_changing: true,
-    price: 0,
-    gender_neutral: true,
-  },
-];
+const generateMapLink = (res) => {
+    return res.map(toilet => {
+      toilet.map_link = `https://www.google.com/maps/dir//${toilet.latitude},${toilet.longitude}/`;
+      return toilet;
+    })
+}
