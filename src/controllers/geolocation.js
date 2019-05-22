@@ -6,6 +6,8 @@ exports.get = (req, res) => {
   const coords = qs.parse(req.url.split('?')[1]);
 
   jwt.sign(coords, SECRET, (err, token) => {
+    //error handling doesn't work because the code stops running, but nothing is printed to console or user
+    // if (!SECRET) return new TypeError('Env SECRET must be set');
     if (err) console.error('cookie creation error: ', err);
     res.cookie('userlocation', token, { maxAge: 1800000 });
     res.end();
