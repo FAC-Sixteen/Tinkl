@@ -117,9 +117,7 @@ a:active {
 }
 
 .noscript {
-  font-family: 'Signika Negative', sans-serif;
   margin: 0;
-  /* text-decoration: overline; */
   background-color: black;
   color: white;
   padding: 0.1em 0.2em;
