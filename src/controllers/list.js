@@ -1,108 +1,32 @@
+const jwt = require('jsonwebtoken');
+const cookie = require('cookie');
+const { SECRET } = require('../config');
+const getData = require('../model/queries/getData');
+
 exports.get = (req, res) => {
-  res.render('list', {
-    pageTitle: 'Near You', navBack: '/filter', navForward: '/', listItemArray,
-  });
+  const cookieData = cookie.parse(req.headers.cookie);
+
+  const locationJWT = cookieData.userlocation;
+  const coordinates = jwt.verify(locationJWT, SECRET);
+
+  const filterJWT = cookieData.userfilters;
+  const filters = jwt.verify(filterJWT, SECRET);
+
+  const { lat } = coordinates;
+  const { long } = coordinates;
+
+  getData.getToilets(lat, long, filters)
+    .then((getDataResult) => {
+      const toiletsArray = formatArray(getDataResult);
+      res.render('list', {
+        pageTitle: 'Near You', navBack: '/filter', navForward: '/', toiletsArray,
+      });
+    })
+    .catch(error => console.error(error));
 };
 
-// array will come from database query given the filters selected
-const listItemArray = [
-  {
-    name: 'Waterstones',
-    distance: '10 metres away',
-    customer_toilet: true,
-    address: '2-4 The Broadway, Crouch End, London N8 9SN',
-    accessible: true,
-    baby_changing: true,
-    price: 0,
-    gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
-  },
-  {
-    name: 'Waterstones',
-    distance: '10 metres away',
-    customer_toilet: false,
-    address: '2-4 The Broadway, Crouch End, London N8 9SN',
-    accessible: true,
-    baby_changing: true,
-    price: 0,
-    gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
-  },
-  {
-    name: 'Waterstones',
-    distance: '10 metres away',
-    customer_toilet: true,
-    address: '2-4 The Broadway, Crouch End, London N8 9SN',
-    accessible: true,
-    baby_changing: true,
-    price: 0,
-    gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
-  },
-  {
-    name: 'Waterstones',
-    distance: '10 metres away',
-    customer_toilet: true,
-    address: '2-4 The Broadway, Crouch End, London N8 9SN',
-    accessible: true,
-    baby_changing: true,
-    price: 0,
-    gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
-  },
-  {
-    name: 'Waterstones',
-    distance: '10 metres away',
-    customer_toilet: true,
-    address: '2-4 The Broadway, Crouch End, London N8 9SN',
-    accessible: true,
-    baby_changing: true,
-    price: 0,
-    gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
-  },
-  {
-    name: 'Abercombe Council',
-    distance: '10 metres away',
-    customer_toilet: true,
-    address: '2-4 The Broadway, Crouch End, London N8 9SN',
-    accessible: true,
-    baby_changing: true,
-    price: 0,
-    gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
-  },
-  {
-    name: 'Waterstones',
-    distance: '10 metres away',
-    customer_toilet: false,
-    address: '2-4 The Broadway, Crouch End, London N8 9SN',
-    accessible: true,
-    baby_changing: true,
-    price: 0,
-    gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
-  },
-  {
-    name: 'Pret',
-    distance: '10 metres away',
-    customer_toilet: true,
-    address: '2-4 The Broadway, Crouch End, London N8 9SN',
-    accessible: true,
-    baby_changing: true,
-    price: 0,
-    gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
-  },
-  {
-    name: 'Toilet',
-    distance: '10 metres away',
-    customer_toilet: true,
-    address: '2-4 The Broadway, Crouch End, London N8 9SN',
-    accessible: true,
-    baby_changing: true,
-    price: 0,
-    gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
-  },
-];
+const formatArray = res => res.map((toilet) => {
+  toilet.map_link = `https://www.google.com/maps/dir//${toilet.latitude},${toilet.longitude}/`;
+  toilet.distance = `${Math.floor(toilet.distance * 100) / 100} miles away`;
+  return toilet;
+});
