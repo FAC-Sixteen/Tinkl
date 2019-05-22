@@ -1,31 +1,38 @@
-{{#each toiletsArray}}
-    <section class="listItem">
-      <div class="listItem--onsameline">
-        <p class="p1">{{name}}</p>
-        <p>{{distance}}</p>
-      </div>
-        {{#if customer_toilet}}
-        <p class="listItem--grey">Customer toilet</p>
-        {{else}}
-        <p class="listItem--grey">Public toilet</p>
-        {{/if}}
-        <a href="{{map_link}}" target="_blank"><p>{{address}}</p></a>
-        <section class="listItem__icon--container">
-            {{#if accessible}}
-                <img class="listItem__icon" src="/assets/accessible.svg" alt="Accessible Icon">
-            {{/if}}
 
-            {{#if baby_changing}}
-                <img class="listItem__icon" src="/assets/baby.svg" alt="Baby-changing Icon">
+{{#if toiletsArray}}
+    {{#each toiletsArray}}
+        <section class="listItem">
+          <div class="listItem--onsameline">
+            <p class="p1">{{name}}</p>
+            <p>{{distance}}</p>
+          </div>
+            {{#if customer_toilet}}
+            <p class="listItem--grey">Customer toilet</p>
+            {{else}}
+            <p class="listItem--grey">Public toilet</p>
             {{/if}}
+            <a href="{{map_link}}" target="_blank"><p>{{address}}</p></a>
+            <section class="listItem__icon--container">
+                {{#if accessible}}
+                    <img class="listItem__icon" src="/assets/accessible.svg" alt="Accessible Icon">
+                {{/if}}
 
-            {{#unless price}}
-                <img class="listItem__icon" src="/assets/free.svg" alt="Free Icon">
-            {{/unless}}
+                {{#if baby_changing}}
+                    <img class="listItem__icon" src="/assets/baby.svg" alt="Baby-changing Icon">
+                {{/if}}
 
-            {{#if gender_neutral}}
-                <img class="listItem__icon" src="/assets/genderNeutral.svg" alt="Gender Neutral Icon">
-            {{/if}}
+                {{#unless price}}
+                    <img class="listItem__icon" src="/assets/free.svg" alt="Free Icon">
+                {{/unless}}
+
+                {{#if gender_neutral}}
+                    <img class="listItem__icon" src="/assets/genderNeutral.svg" alt="Gender Neutral Icon">
+                {{/if}}
+            </section>
         </section>
+    {{/each}}
+{{else}}
+    <section class="listItem">
+        <p class='p2'> Sorry, we couldn't find any toilets matching that criteria. </p>
     </section>
-{{/each}}
+{{/if}}

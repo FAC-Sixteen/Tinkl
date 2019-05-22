@@ -4,7 +4,23 @@ const { SECRET } = require('../config');
 const getData = require('../model/queries/getData');
 
 exports.get = (req, res) => {
+
+  if (!req.headers.cookie) {
+    res.redirect('/location');
+    res.end();
+  }
+
   const cookieData = cookie.parse(req.headers.cookie);
+
+  if (cookieData.userlocation === undefined) {
+    res.redirect('/location');
+    res.end();
+  }
+
+  if (cookieData.userfilters === undefined) {
+    res.redirect('/filter');
+    res.end();
+  }
 
   const locationJWT = cookieData.userlocation;
   const coordinates = jwt.verify(locationJWT, SECRET);
@@ -17,10 +33,16 @@ exports.get = (req, res) => {
 
   getData.getToilets(lat, long, filters)
     .then((getDataResult) => {
-      const toiletsArray = formatArray(getDataResult);
-      res.render('list', {
-        pageTitle: 'Near You', navBack: '/filter', navForward: '/', toiletsArray,
-      });
+      if (getDataResult.length === 0) {
+        res.render('list', {
+          pageTitle: 'Near You', navBack: '/filter', navForward: '/',
+        });
+      } else {
+        const toiletsArray = formatArray(getDataResult);
+        res.render('list', {
+          pageTitle: 'Near You', navBack: '/filter', navForward: '/', toiletsArray,
+        });
+      }
     })
     .catch(error => console.error(error));
 };
