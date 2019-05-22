@@ -55,7 +55,7 @@ a:active {
 
 /* TYPOGRAPHY */
 
-h1 {
+h1, .h1 {
   font-size: 6em;
   font-weight: 600;
 }
@@ -326,4 +326,20 @@ h2 {
 
 .list__footer {
   margin: 2em;
+}
+
+/* ERROR PAGES */
+
+.error__body {
+  background-color: #A3DAD1;
+}
+
+.error__container {
+  position: relative;
+  
+}
+
+.error__image {
+  position: absolute;
+  right: 0;
 }
