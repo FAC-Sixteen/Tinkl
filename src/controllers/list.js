@@ -17,7 +17,7 @@ exports.get = (req, res) => {
 
   getData.getToilets(lat, long, filters)
   .then(getDataResult => {
-    const toiletsArray = generateMapLink(getDataResult);
+    const toiletsArray = formatArray(getDataResult);
     res.render('list', {
       pageTitle: 'Near You', navBack: '/filter', navForward: '/', toiletsArray,
     });
@@ -25,9 +25,10 @@ exports.get = (req, res) => {
   .catch(error => console.error(error));
 };
 
-const generateMapLink = (res) => {
+const formatArray = (res) => {
     return res.map(toilet => {
       toilet.map_link = `https://www.google.com/maps/dir//${toilet.latitude},${toilet.longitude}/`;
+      toilet.distance = Math.floor(toilet.distance * 100) / 100 + ' miles away';
       return toilet;
     })
 }
