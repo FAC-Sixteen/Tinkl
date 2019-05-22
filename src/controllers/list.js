@@ -17,10 +17,16 @@ exports.get = (req, res) => {
 
   getData.getToilets(lat, long, filters)
     .then((getDataResult) => {
-      const toiletsArray = formatArray(getDataResult);
-      res.render('list', {
-        pageTitle: 'Near You', navBack: '/filter', navForward: '/', toiletsArray,
-      });
+      if (getDataResult.length === 0) {
+        res.render('list', {
+          pageTitle: 'Near You', navBack: '/filter', navForward: '/',
+        });
+      } else {
+        const toiletsArray = formatArray(getDataResult);
+        res.render('list', {
+          pageTitle: 'Near You', navBack: '/filter', navForward: '/', toiletsArray,
+        });
+      }
     })
     .catch(error => console.error(error));
 };

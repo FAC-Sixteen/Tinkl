@@ -20,7 +20,7 @@ const getToilets = (lat, long, filters) => {
 
         dbConnection.query(SQLquery, [lat, long])
         .then(toiletsClose => resolve(toiletsClose.rows))
-        .catch(error => console.error(error));
+        .catch(error => reject(error));
     });
 }
 
