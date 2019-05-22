@@ -1,5 +1,5 @@
 const locateMe = document.querySelector('#location');
-const alert = document.querySelector('.location__alert');
+const locationAlert = document.querySelector('.location__alert');
 const postcodeMe = document.querySelector('#postcode');
 const postcodeText = document.querySelector('.text__location');
 const postcodeAlert = document.querySelector('.postcode__alert');

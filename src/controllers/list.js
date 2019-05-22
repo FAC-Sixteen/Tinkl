@@ -15,7 +15,7 @@ const listItemArray = [
     baby_changing: true,
     price: 0,
     gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
+    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785',
   },
   {
     name: 'Waterstones',
@@ -26,7 +26,7 @@ const listItemArray = [
     baby_changing: true,
     price: 0,
     gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
+    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785',
   },
   {
     name: 'Waterstones',
@@ -37,7 +37,7 @@ const listItemArray = [
     baby_changing: true,
     price: 0,
     gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
+    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785',
   },
   {
     name: 'Waterstones',
@@ -48,7 +48,7 @@ const listItemArray = [
     baby_changing: true,
     price: 0,
     gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
+    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785',
   },
   {
     name: 'Waterstones',
@@ -59,7 +59,7 @@ const listItemArray = [
     baby_changing: true,
     price: 0,
     gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
+    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785',
   },
   {
     name: 'Abercombe Council',
@@ -70,7 +70,7 @@ const listItemArray = [
     baby_changing: true,
     price: 0,
     gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
+    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785',
   },
   {
     name: 'Waterstones',
@@ -81,7 +81,7 @@ const listItemArray = [
     baby_changing: true,
     price: 0,
     gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
+    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785',
   },
   {
     name: 'Pret',
@@ -92,7 +92,7 @@ const listItemArray = [
     baby_changing: true,
     price: 0,
     gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
+    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785',
   },
   {
     name: 'Toilet',
@@ -103,6 +103,6 @@ const listItemArray = [
     baby_changing: true,
     price: 0,
     gender_neutral: true,
-    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785'
+    map_link: 'https://assets.change.org/photos/5/sw/sy/JySWsYeBDXQvWna-800x450-noPad.jpg?1551704785',
   },
 ];
