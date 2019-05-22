@@ -116,6 +116,19 @@ a:active {
   padding: 4rem;
 }
 
+.noscript {
+  margin: 0;
+  background-color: black;
+  color: white;
+  padding: 0.1em 0.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.disabled {
+  background-color: #C4C4C4;
+}
+
 /* LOCATION PAGE */
 .location {
   display: flex;
