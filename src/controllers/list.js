@@ -50,5 +50,10 @@ exports.get = (req, res) => {
 const formatArray = res => res.map((toilet) => {
   toilet.map_link = `https://www.google.com/maps/dir//${toilet.latitude},${toilet.longitude}/@${toilet.latitude},${toilet.longitude},16z`;
   toilet.distance = `${Math.floor(toilet.distance * 100) / 100} miles away`;
+  if (toilet.price == 0.00) {
+    toilet.free = true;
+  } else {
+    toilet.free = false;
+  }
   return toilet;
 });
