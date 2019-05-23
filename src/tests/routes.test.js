@@ -38,6 +38,19 @@ test('Filter page returns an html file', (t) => {
     });
 });
 
+test('List page returns an html file', (t) => {
+  supertest(router)
+    .get('/list')
+    .set('Cookie', ['userlocation=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsYXQiOiI1MS41NjM4MTU2IiwibG9uZyI6Ii0wLjEwNzc2ODQ5OTk5OTk5OTk5IiwiaWF0IjoxNTU4NTIzNjE5fQ.Wlya08T1gYtdEsFjOvHE4SkcmcLA3nmvz6X7_JyVC14', 'userfilters=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2MiOiJmYWxzZSIsImJhYiI6ImZhbHNlIiwiZnJlIjoiZmFsc2UiLCJnZW4iOiJmYWxzZSIsInB1YiI6InRydWUiLCJpYXQiOjE1NTg1MjM2NzN9.CfnJM3f3DPUA-X9G8ompBtMXs1GawgngyaGAnp2GYU4'])
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err) => {
+      t.error(err, 'Error should be null');
+      t.pass('List route works!');
+      t.end();
+    });
+});
+
 test('/geolocation gives cookie', (t) => {
   supertest(router)
     .get('/geolocation?long=50&lat=1')
