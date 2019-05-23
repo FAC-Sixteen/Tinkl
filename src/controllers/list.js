@@ -3,8 +3,18 @@ const cookie = require('cookie');
 const { SECRET } = require('../config');
 const getData = require('../model/queries/getData');
 
-exports.get = (req, res) => {
+const formatArray = res => res.map((toilet) => {
+  toilet.map_link = `https://www.google.com/maps/dir//${toilet.latitude},${toilet.longitude}/@${toilet.latitude},${toilet.longitude},16z`;
+  toilet.distance = `${Math.floor(toilet.distance * 100) / 100} miles away`;
+  if (toilet.price == 0.00) {
+    toilet.free = true;
+  } else {
+    toilet.free = false;
+  }
+  return toilet;
+});
 
+exports.get = (req, res) => {
   if (!req.headers.cookie) {
     res.redirect('/location');
     res.end();
@@ -23,6 +33,7 @@ exports.get = (req, res) => {
   }
 
   const locationJWT = cookieData.userlocation;
+
   const coordinates = jwt.verify(locationJWT, SECRET);
 
   const filterJWT = cookieData.userfilters;
@@ -46,14 +57,3 @@ exports.get = (req, res) => {
     })
     .catch(error => console.error(error));
 };
-
-const formatArray = res => res.map((toilet) => {
-  toilet.map_link = `https://www.google.com/maps/dir//${toilet.latitude},${toilet.longitude}/@${toilet.latitude},${toilet.longitude},16z`;
-  toilet.distance = `${Math.floor(toilet.distance * 100) / 100} miles away`;
-  if (toilet.price == 0.00) {
-    toilet.free = true;
-  } else {
-    toilet.free = false;
-  }
-  return toilet;
-});

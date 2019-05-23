@@ -4,32 +4,32 @@ const postcodeMe = document.querySelector('#postcode');
 const postcodeText = document.querySelector('.text__location');
 const postcodeAlert = document.querySelector('.postcode__alert');
 
-const geolocate = (promise) => {
-  promise()
-    .then((pos) => {
-      const url = `/geolocation?long=${pos.longitude}&lat=${pos.latitude}`;
+const geolocate = (locationFunction) => {
+  locationFunction()
+    .then((position) => {
+      const url = `/geolocation?long=${position.longitude}&lat=${position.latitude}`;
       fetch(url)
         .then(() => {
           window.location.href = '/filter';
         })
         .catch((err) => {
-          console.log('error', err);
+          console.error(err);
         });
     })
     .catch((err) => {
       if (err === 'geolocation') {
         locationAlert.textContent = 'Sorry, your browser is not compatible with the Use My Location feature.';
         locateMe.disabled = true;
-      } else {
-        // customer facing validation for bad postcode needed
+      } else if (err === 'postcode') {
+        postcodeAlert.textContent = 'Please enter a valid postcode.';
       }
     });
 };
 
 const useLocation = () => new Promise((resolve, reject) => {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((pos) => {
-      resolve(pos.coords);
+    navigator.geolocation.getCurrentPosition((position) => {
+      resolve(position.coords);
     }, geoError, { timeout: 10000 });
   } else {
     reject('geolocation');
@@ -61,14 +61,13 @@ const usePostcode = () => new Promise((resolve, reject) => {
     const postcode = postcodeText.value.replace(' ', '%20');
     const url = `/postcode?postcode=${postcode}`;
     fetch(url)
-      .then((json) => {
-        resolve(json);
-      })
+      .then(res => res.json())
+      .then(json => resolve(json))
       .catch((err) => {
         reject(err);
       });
   } else {
-    reject(postcodeAlert.textContent = 'Please enter a valid postcode.');
+    reject('postcode');
   }
 });
 
