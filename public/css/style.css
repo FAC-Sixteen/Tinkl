@@ -12,6 +12,10 @@ a:visited {
   color: black;
 }
 
+.mapLink:visited{
+  color:purple;
+}
+
 a:hover {
   text-decoration: none;
   color: black;
