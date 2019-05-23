@@ -404,11 +404,6 @@ a:active {
   background-size: 100%;
 }
 
-/* .listItem__free {
-  background-image:url('../assets/free.svg');
-  background-size: 70%;
-} */
-
 .listItem__definitelyFree {
   background-image:url('../assets/definite.svg');
   background-size: 90%;
