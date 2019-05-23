@@ -12,10 +12,6 @@ a:visited {
   color: black;
 }
 
-.mapLink:visited{
-  color:purple;
-}
-
 a:hover {
   text-decoration: none;
   color: black;
@@ -39,8 +35,8 @@ a:active {
 
 .header__logo {
   position: absolute;
-  top: 0.2em;
-  left: 0.2em;
+  top: 0.4em;
+  left: 1.2em;
 }
 
 .button__public {
@@ -171,6 +167,13 @@ a:active {
 }
 
 /* FILTER PAGE */
+.filter__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
+
 .filter {
   display: grid;
   justify-content: center;
@@ -290,7 +293,7 @@ a:active {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  margin: 0 2em;
+  margin: 0 2em 1em 2em;
 }
 
 /* LIST PAGE */
@@ -350,33 +353,11 @@ a:active {
 }
 
 .listItem__icon {
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 2.5em;
-  width: 2.5em;
+  height: 2rem;
+  width: 2rem;
   background-color: #C4C4C4;
+  border-radius: 50%;
   margin: 0.2em;
-}
-
-.listItem__accessible {
-  background-image:url('../assets/accessible.svg');
-  background-size: 160%;
-}
-
-.listItem__baby {
-  background-image:url('../assets/baby.svg');
-  background-size: 150%;
-}
-
-.listItem__genderNeutral {
-  background-image:url('../assets/genderNeutral.svg');
-  background-size: 100%;
-}
-
-.listItem__free {
-  background-image:url('../assets/free.svg');
-  background-size: 70%;
 }
 
 .list__footer {
