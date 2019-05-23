@@ -13,7 +13,7 @@ exports.get = (req, res) => {
 
     result.on('end', () => {
       const parsedData = JSON.parse(data);
-      const coords = { long: parsedData.result.longitude, lat: parsedData.result.latitude };
+      const coords = { longitude: parsedData.result.longitude, latitude: parsedData.result.latitude };
       res.json(coords);
     });
   });

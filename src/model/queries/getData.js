@@ -2,7 +2,6 @@ const dbConnection = require('../database/db_connection');
 
 const getToilets = (lat, long, filters) => {
     return new Promise((resolve, reject) => {
-
         let SQLfilters = '';
         
         if (filters.pub === 'true') SQLfilters += 'AND customer_toilet = false ';
@@ -20,7 +19,7 @@ const getToilets = (lat, long, filters) => {
 
         dbConnection.query(SQLquery, [lat, long])
         .then(toiletsClose => resolve(toiletsClose.rows))
-        .catch(error => console.error(error));
+        .catch(error => reject(error));
     });
 }
 

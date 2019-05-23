@@ -13,6 +13,10 @@ a:visited {
   color: black;
 }
 
+.mapLink:visited{
+  color:purple;
+}
+
 a:hover {
   text-decoration: none;
   color: black;
@@ -32,7 +36,7 @@ a:active {
   height: 4.68em;
   background-color: #A3DAD1;
   position: relative;
-}
+  }
 
 .header__logo {
   position: absolute;
@@ -117,7 +121,27 @@ a:active {
   padding: 4rem;
 }
 
+.noscript {
+  margin: 0;
+  background-color: black;
+  color: white;
+  padding: 0.1em 0.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.disabled {
+  background-color: #C4C4C4;
+}
+
 /* LOCATION PAGE */
+.location__body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
 .location {
   display: flex;
   flex-flow: column wrap;
@@ -156,12 +180,16 @@ a:active {
   margin-top: 2em;
 }
 
-.filter__container input{
+.filter__container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
+}
+
+.filter__container input:focus ~ .button__filter {
+  border: 2px solid black;
 }
 
 .filter__container {
@@ -270,6 +298,13 @@ a:active {
 .list__body {
   display: flex;
   flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+}
+
+.list {
+  width: 100%;
+  margin-bottom: 6em;
 }
 
 .listItem {
@@ -316,15 +351,39 @@ a:active {
 }
 
 .listItem__icon {
-  height: 2rem;
-  width: 2rem;
-  background-color: #C4C4C4;
   border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 2.5em;
+  width: 2.5em;
+  background-color: #C4C4C4;
   margin: 0.2em;
+}
+
+.listItem__accessible {
+  background-image:url('../assets/accessible.svg');
+  background-size: 160%;
+}
+
+.listItem__baby {
+  background-image:url('../assets/baby.svg');
+  background-size: 150%;
+}
+
+.listItem__genderNeutral {
+  background-image:url('../assets/genderNeutral.svg');
+  background-size: 100%;
+}
+
+.listItem__free {
+  background-image:url('../assets/free.svg');
+  background-size: 70%;
 }
 
 .list__footer {
   margin: 2em;
+  position: absolute;
+  bottom: 0;
 }
 
 /* ERROR PAGES */
