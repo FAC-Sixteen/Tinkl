@@ -177,7 +177,7 @@ a:active {
   overflow: hidden;
   border: none;
   background-color: #DBF0E4;
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 
 .text__location {
@@ -185,7 +185,7 @@ a:active {
   padding: 0.5em 1em;
   background-color: #f4f4f4;
   border: 1px solid black;
-  margin-bottom: -0.5em;
+  margin-top: 2em;
 }
 
 .location__footer {
