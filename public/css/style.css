@@ -357,11 +357,34 @@ a:active {
 }
 
 .listItem__icon {
-  height: 2rem;
-  width: 2rem;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 2.5em;
+  width: 2.5em;
   background-color: #C4C4C4;
   border-radius: 50%;
   margin: 0.2em;
+}
+
+.listItem__accessible {
+  background-image:url('../assets/accessible.svg');
+  background-size: 160%;
+}
+
+.listItem__baby {
+  background-image:url('../assets/baby.svg');
+  background-size: 150%;
+}
+
+.listItem__genderNeutral {
+  background-image:url('../assets/genderNeutral.svg');
+  background-size: 100%;
+}
+
+.listItem__free {
+  background-image:url('../assets/free.svg');
+  background-size: 70%;
 }
 
 .list__footer {
