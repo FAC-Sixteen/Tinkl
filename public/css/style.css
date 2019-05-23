@@ -35,7 +35,7 @@ a:active {
   height: 4.68em;
   background-color: #A3DAD1;
   position: relative;
-}
+  }
 
 .header__logo {
   position: absolute;
@@ -134,6 +134,13 @@ a:active {
 }
 
 /* LOCATION PAGE */
+.location__body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+
 .location {
   display: flex;
   flex-flow: column wrap;
@@ -290,6 +297,13 @@ a:active {
 .list__body {
   display: flex;
   flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+}
+
+.list {
+  width: 100%;
+  margin-bottom: 6em;
 }
 
 .listItem {
@@ -367,6 +381,8 @@ a:active {
 
 .list__footer {
   margin: 2em;
+  position: absolute;
+  bottom: 0;
 }
 
 /* ERROR PAGES */
