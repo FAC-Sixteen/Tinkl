@@ -63,7 +63,7 @@ test('/geolocation gives cookie', (t) => {
 });
 
 test('/postcode gives long and lat', (t) => {
-  const expected = { long: -0.107694, lat: 51.563729 };
+  const expected = { longitude: -0.107694, latitude: 51.563729 };
   supertest(router)
     .get('/postcode?postcode=N4%203HF')
     .expect(200)
