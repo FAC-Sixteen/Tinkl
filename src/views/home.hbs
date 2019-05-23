@@ -1,15 +1,17 @@
 <body class="home__body">
-<header>
+<header class = "opacity--grow">
     <h1 class="h1">Tinkl</h1>
     <p class="p2">Find a Suitable Toilet FAST</p>
 </header>
+<noscript><p class="noscript p1">! Please enable Javascript !</p></noscript>
+<nav class="home__nav opacity--grow">
 <noscript><a href="https://i.imgur.com/QpdWE5K.jpg"><p class="noscript p1">! Please enable Javascript !</p></a></noscript>
-<nav class="home__nav">
     <a class="button button__find p1 disabled">Find a toilet</a>
     {{!-- <a class="button button__add" href="/add">Add a toilet</a> --}}
 </nav>
-<section class="logo--background">
-    <img alt="Tinkl logo" src="/assets/home_logo.svg">
+<section>
+    <img aria-hidden="true" class="logo--background logo--background__blank opacity--grow" alt="Tinkl logo" src="/assets/home_logo.svg">
+    <img class="logo--background opacity--fade" alt="Tinkl logo" src="/assets/home_logo_smile.svg">
 </section>
 <script src="../js/domPWA.js"></script>
 <script src="../js/install.js"></script>

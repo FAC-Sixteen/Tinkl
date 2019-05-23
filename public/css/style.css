@@ -104,7 +104,28 @@ a:active {
   position: fixed;
   top: 10%;
   left: 35%;
+}
+
+.logo--background__blank {
   filter: blur(10px);
+}
+
+.opacity--fade {
+  opacity: 1;
+	animation: opacityfade 2s;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+}
+
+.opacity--fade:after{
+
+}
+
+.opacity--grow {
+  opacity: 0;
+	animation: opacitygrow 2s;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
 }
 
 .button__find,
@@ -410,4 +431,30 @@ a:active {
 .error__image {
   position: absolute;
   right: 0;
+}
+
+/*Keyframe animations*/
+
+@keyframes opacitygrow {
+	0% {
+    opacity: 0;
+    visibility: hidden;
+	}
+
+	100% {
+    opacity: 1;
+    visibility: visible;
+	}
+}
+
+@keyframes opacityfade {
+	0% {
+    opacity: 1;
+    visibility: visible;
+	}
+
+	100% {
+    opacity: 0;
+    visibility: hidden;
+	}
 }
