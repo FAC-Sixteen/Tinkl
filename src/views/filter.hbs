@@ -3,23 +3,23 @@
 <section class="filter">
     <p class="filter__instructions">Select ALL that apply</p>
     <label class="filter__container filter__public">
-        <input type="checkbox" id="checkbox__public">
+        <input type="checkbox" id="checkbox__public" aria-label="public">
         <span class="button__filter button__public"></span>
     </label>
     <label class="filter__container filter__baby">
-        <input type="checkbox" id="checkbox__baby">
+        <input type="checkbox" id="checkbox__baby" aria-label="baby change">
         <span class="button__filter button__baby"></span>
     </label>
     <label class="filter__container filter__accessible">
-        <input type="checkbox" id="checkbox__accessible">
+        <input type="checkbox" id="checkbox__accessible" aria-label="accessible">
         <span class="button__filter button__accessible"></span>
     </label>
     <label class="filter__container filter__free">
-        <input type="checkbox" id="checkbox__free">
+        <input type="checkbox" id="checkbox__free" aria-label="free">
         <span class="button__filter button__free"></span>
     </label>
     <label class="filter__container filter__genderNeutral">
-        <input type="checkbox" id="checkbox__genderNeutral">
+        <input type="checkbox" id="checkbox__genderNeutral" aria-label="gender neutral">
         <span class="button__filter button__genderNeutral"></span>
     </label>
 
@@ -31,7 +31,7 @@
 
 <footer class="filter__footer">
 {{>navigation}}
-<a class="button button__forward"><img class ="button__forward--tick" src="/assets/tick.svg"></a>
+<a class="button button__forward"><img class ="button__forward--tick" alt="Forward button" src="/assets/tick.svg"></a>
 </footer>
 
 <script src="../js/domFilter.js"></script>
