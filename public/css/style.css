@@ -342,7 +342,7 @@ a:active {
   margin: 0.2em;
 }
 
-.listItem > a {
+.mapLink {
   text-decoration: underline;
 }
 
