@@ -405,8 +405,13 @@ a:active {
   background-size: 100%;
 }
 
-.listItem__free {
+.listItem__definitelyFree {
   background-image:url('../assets/free.svg');
+  background-size: 80%;
+}
+
+.listItem__probablyFree {
+  background-image:url('../assets/probable.svg');
   background-size: 70%;
 }
 

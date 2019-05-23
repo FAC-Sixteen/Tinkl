@@ -22,9 +22,15 @@
                     <span class="listItem__icon listItem__baby" title="Baby Changing Icon"></span>
                 {{/if}}
 
-                {{#if free}}
-                    <span class="listItem__icon listItem__free" title="Free Icon"></span>
+                {{#if probable}}
+                    <span class="listItem__icon listItem__probablyFree" title="Probably Free Icon"></span>
                 {{/if}}
+
+                {{#if definite}}
+                    <span class="listItem__icon listItem__definitelyFree" title="Definitely Free Icon"></span>
+                {{/if}}
+
+
 
                 {{#if gender_neutral}}
                     <span class="listItem__icon listItem__genderNeutral" title="Gender Neutral Icon"></span>

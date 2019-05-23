@@ -6,10 +6,15 @@ const getData = require('../model/queries/getData');
 const formatArray = res => res.map((toilet) => {
   toilet.map_link = `https://www.google.com/maps/dir//${toilet.latitude},${toilet.longitude}/@${toilet.latitude},${toilet.longitude},16z`;
   toilet.distance = `${Math.floor(toilet.distance * 100) / 100} miles away`;
-  if (toilet.price == 0.00) {
-    toilet.free = true;
+  if (toilet.free === 'probable') {
+    toilet.probable = true;
+    toilet.definite = false;
+  } else if (toilet.free === 'definite') {
+    toilet.probable = false;
+    toilet.definite = true;
   } else {
-    toilet.free = false;
+    toilet.probable = false;
+    toilet.definite = false;
   }
   return toilet;
 });

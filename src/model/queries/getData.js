@@ -4,11 +4,11 @@ const getToilets = (lat, long, filters) => {
     return new Promise((resolve, reject) => {
         let SQLfilters = '';
         
-        if (filters.pub === 'true') SQLfilters += 'AND customer_toilet = false ';
-        if (filters.fre === 'true') SQLfilters += 'AND price = 0 ';
-        if (filters.bab === 'true') SQLfilters += 'AND baby_changing = true ';
-        if (filters.acc === 'true') SQLfilters += 'AND accessible = true ';
-        if (filters.gen === 'true') SQLfilters += 'AND gender_neutral = true ';
+        if (filters.pub === 'true') SQLfilters += "AND customer_toilet = false ";
+        if (filters.fre === 'true') SQLfilters += "AND free = 'probable' OR free = 'definite' ";
+        if (filters.bab === 'true') SQLfilters += "AND baby_changing = true ";
+        if (filters.acc === 'true') SQLfilters += "AND accessible = true ";
+        if (filters.gen === 'true') SQLfilters += "AND gender_neutral = true ";
         if (SQLfilters.charAt(SQLfilters.length - 1) === ' ') {
             let SQLfiltersArray = SQLfilters.split('');
             SQLfiltersArray.pop();

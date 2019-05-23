@@ -25,6 +25,7 @@ const testToilet = {
   baby_changing: true,
   customer_toilet: true,
   price: '0.00',
+  free: 'definite',
   radar: null,
   removal_reason: null,
   distance: 0.435528196368657,
