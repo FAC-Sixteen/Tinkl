@@ -13,10 +13,6 @@ a:visited {
   color: black;
 }
 
-.mapLink:visited{
-  color:purple;
-}
-
 a:hover {
   text-decoration: none;
   color: black;
@@ -350,12 +346,17 @@ a:active {
   text-decoration: underline;
 }
 
-.listItem > a:hover {
-  background-color: #a3dad1;
+.mapLink:hover {
+  background-color: #DBF0E4;
 }
 
-.listItem > a > p {
+.mapLink > p {
   margin: 0.2em;
+  text-decoration: underline;
+}
+
+.mapLink:visited{
+  color: #A3DAD1;
 }
 
 .listItem--onsameline {
