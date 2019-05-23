@@ -11,24 +11,26 @@
             {{else}}
             <p class="listItem--grey">Public toilet</p>
             {{/if}}
-            <a href="{{map_link}}" target="_blank"><p>{{address}}</p></a>
+            <div class="listItem--onsameline">
+            <a class="mapLink" href="{{map_link}}" target="_blank"><p>{{address}}</p></a>
             <section class="listItem__icon--container">
                 {{#if accessible}}
-                    <img class="listItem__icon" src="/assets/accessible.svg" alt="Accessible Icon">
+                    <span class="listItem__icon listItem__accessible" title="Accessible Icon"></span>
                 {{/if}}
 
                 {{#if baby_changing}}
-                    <img class="listItem__icon" src="/assets/baby.svg" alt="Baby-changing Icon">
+                    <span class="listItem__icon listItem__baby" title="Baby Changing Icon"></span>
                 {{/if}}
 
                 {{#if free}}
-                    <img class="listItem__icon" src="/assets/free.svg" alt="Free Icon">
+                    <span class="listItem__icon listItem__free" title="Free Icon"></span>
                 {{/if}}
 
                 {{#if gender_neutral}}
-                    <img class="listItem__icon" src="/assets/genderNeutral.svg" alt="Gender Neutral Icon">
+                    <span class="listItem__icon listItem__genderNeutral" title="Gender Neutral Icon"></span>
                 {{/if}}
             </section>
+            </div>
         </section>
     {{/each}}
 {{else}}
