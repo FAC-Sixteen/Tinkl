@@ -66,7 +66,7 @@ As a user, I want to be able to leave a review of a toilet after visiting it.
 
 ---
 
-## Process
+## :bookmark_tabs: Process
 
 ### Design week
 > User research and protopyping
