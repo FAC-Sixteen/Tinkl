@@ -84,3 +84,15 @@ test('/confirm gives cookie', (t) => {
       t.end();
     });
 });
+
+test('404 error returns 404 error page', (t) => {
+  supertest(router)
+    .get('/sadcat')
+    .expect(404)
+    .expect('Content-Type', /html/)
+    .end((err) => {
+      t.error(err, 'Error should be null');
+      t.pass('404 route works!');
+      t.end();
+    });
+});
