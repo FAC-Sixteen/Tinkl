@@ -182,6 +182,7 @@ a:active {
   background-color: #f4f4f4;
   border: 1px solid black;
   margin-top: 2em;
+  text-transform: uppercase;
 }
 
 .location__footer {
@@ -342,7 +343,7 @@ a:active {
   margin: 0.2em;
 }
 
-.listItem > a {
+.mapLink {
   text-decoration: underline;
 }
 
