@@ -323,6 +323,7 @@ a:active {
   overflow: hidden;
   border: none;
   background-color: #a3dad1;
+  margin: 3.8px 0;
 }
 
 .filter__footer {
