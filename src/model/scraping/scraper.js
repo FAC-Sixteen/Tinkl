@@ -29,7 +29,7 @@ const getLooArray = async (json) => {
 
 const getLooObject = (id, index) => {
   return new Promise((resolve, reject) => {
-    if (index >= 14700 && index < 14900) {
+    if (index >= 15000 && index < 15100) {
       let url = `https://gbptm-stage.herokuapp.com/api/loos/${id}`;
       https.get(url, (res) => {
         let looData = '';
@@ -81,9 +81,13 @@ const getLooObject = (id, index) => {
                   };
 
                 let looFee = null;
+                let looFree = null;
                   if (parsedLooData.properties._doc.fee != null && parsedLooData.properties._doc.fee.match(/1-9/) == null) {
                     looFee = 0.00;
-                  };
+                    looFree = 'definite';
+                  } else if (parsedLooData.properties._doc.fee == null) {
+                    looFree = 'probable';
+                  }
 
                 const object = {
                   active: true,
@@ -99,6 +103,7 @@ const getLooObject = (id, index) => {
                   baby_changing: parsedLooData.properties._doc.babyChange,
                   customer_toilet: looCustomerOnly,
                   price: looFee,
+                  free: looFree,
                   radar: parsedLooData.properties._doc.radar,
                   removal_reason: null
                 }
