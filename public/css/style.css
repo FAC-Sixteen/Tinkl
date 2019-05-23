@@ -155,12 +155,16 @@ a:active {
   margin-top: 2em;
 }
 
-.filter__container input{
+.filter__container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
+}
+
+.filter__container input:focus ~ .button__filter {
+  border: 2px solid black;
 }
 
 .filter__container {
