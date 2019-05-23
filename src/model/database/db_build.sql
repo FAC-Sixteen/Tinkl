@@ -17,6 +17,7 @@ CREATE TABLE toilets (
     baby_changing BOOLEAN,
     customer_toilet BOOLEAN NOT NULL,
     price numeric(3,2),
+    free VARCHAR(30),
     radar BOOLEAN,
     removal_reason VARCHAR(280)
 );
@@ -34,7 +35,8 @@ INSERT INTO toilets (
     gender_neutral,
     baby_changing,
     customer_toilet,
-    price
+    price,
+    free
 ) VALUES (
     true,
     'Waterstones',
@@ -48,7 +50,8 @@ INSERT INTO toilets (
     false,
     true,
     true,
-    0.00
+    0.00,
+    'definite'
 );
 
 COMMIT;
