@@ -405,8 +405,8 @@ a:active {
 }
 
 .listItem__definitelyFree {
-  background-image:url('../assets/definite.svg');
-  background-size: 90%;
+  background-image:url('../assets/free.svg');
+  background-size: 80%;
 }
 
 .listItem__probablyFree {
