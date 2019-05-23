@@ -310,6 +310,21 @@ a:active {
   background-image:url('../assets/genderNeutral.svg');
 }
 
+.button--invisible {
+  visibility: hidden;
+  display: none;
+}
+
+.button__forward--all {
+  padding: 0.4em 1.5em;
+  text-align: center;
+  border-radius: 2em;
+  white-space: nowrap;
+  overflow: hidden;
+  border: none;
+  background-color: #a3dad1;
+}
+
 .filter__footer {
   display: flex;
   flex-flow: row nowrap;
