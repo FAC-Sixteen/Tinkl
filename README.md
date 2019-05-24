@@ -122,7 +122,7 @@ We had slightly less time for this sprint, and focused on getting our MVP to a p
 * making sure that all inputs and buttons were accessible
 * scraping data from a hostile API
 
-![the struggle](https://media.giphy.com/media/NUwluejA96ftu/giphy.gif)
+![struggle](https://media.giphy.com/media/NUwluejA96ftu/giphy.gif)
 
 ---
 
