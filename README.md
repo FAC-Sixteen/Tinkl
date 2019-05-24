@@ -73,10 +73,14 @@ As a user, I want to be able to leave a review of a toilet after visiting it.
 
 For the first week of the project, we focused on:
 - discovery and definition workshops on the problem and solutions
-[insert pics from the crazy 8 and workshops]
+
+![crazy8](https://i.imgur.com/hrCEuVN.png)
 
 - user research and testing
-[insert main findings]
+    * _User Research_
+        * ![user research](https://user-images.githubusercontent.com/43584074/57293671-4b8a5e80-70bd-11e9-998d-50a2f52027a1.jpg)
+        * general anxiety about using customer toilets
+        * users strongly against paying for toilet use
 
 - designed a prototype using [Figma](https://www.figma.com/file/g0zKvTS7JiJsIpoVybjDsPbv/Tinkl?node-id=0%3A1)
 > ![landing page in progress](https://media.giphy.com/media/KFn4Ue0hLRgWRjyToJ/giphy.gif)
@@ -88,6 +92,12 @@ For the first week of the project, we focused on:
 
 For the first week of building, our goal was to finalise the design and complete a very minimal viable product(MVP). After planning, we broke the tasks down into front-end and back-end issues and tackled both ends simultaneously, switching pairs regularly to ensure every team member worked on every part of the code.
 
+    * set up server
+    * set up handlebars
+    * add functionality to pages
+    * basic CSS
+    * try and struggle with data scraping
+
 
 ### Second build sprint
 > Product completion and bug fixing
@@ -95,15 +105,24 @@ For the first week of building, our goal was to finalise the design and complete
 ![coding](https://media.giphy.com/media/LHZyixOnHwDDy/giphy.gif)
 We had slightly less time for this sprint, and focused on getting our MVP to a point where we were satisfied with it, even though we did not manage to work on the stretch goals.
 
+    * manage to scrape data
+    * transfer data from .json to database
+    * make queries to database
+    * make it look :okay:
+    * PWA
+    * fix bugs
+    * scrape data again
+    * user testing
+
 ---
 
 ## :sweat_drops: Issues faced (and conquered)
 
 * using Promise All effectively
 * making sure that all inputs and buttons were accessible
-* scraping data from an hostile API
+* scraping data from a hostile API
 
-![the struggle](https://media.giphy.com/media/B7ppUExX92PjW/giphy.gif)
+![the struggle](https://media.giphy.com/media/NUwluejA96ftu/giphy.gif)
 
 ---
 
