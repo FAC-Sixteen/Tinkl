@@ -182,10 +182,16 @@ a:active {
   background-color: #f4f4f4;
   border: 1px solid black;
   margin-top: 2em;
+  text-transform: uppercase;
 }
 
 .location__footer {
   margin: 2em;
+}
+
+.location__alert {
+  margin: 0.5em;
+  text-align: center;
 }
 
 /* FILTER PAGE */
